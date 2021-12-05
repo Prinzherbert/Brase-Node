@@ -54,9 +54,7 @@ function isServerReady(){setTimeout(function(){ // Esperar pela conexão com o s
     socket.send(JSON.stringify(["connect"]));
   } else {
     isServerReady();
-  }
-    console.log("Connecting...")
-  }, 200);
+  }}, 200);
 }
 
 socket.onmessage = ({data}) => { // Quando receber uma mensagem do servidor
@@ -71,13 +69,11 @@ socket.onmessage = ({data}) => { // Quando receber uma mensagem do servidor
     break;
   case "array":
     postItArray = [];
-    console.log(info);
     for(let i=0; i < info[1].length; i++){
       postItArray.push(
         new DraggablePostIt(info[1][i].x, info[1][i].y, info[1][i].size, info[1][i].text, info[1][i].hue)
       );
     };
-    console.log(postItArray);
     break;
   }
   requestAnimationFrame(draw);
