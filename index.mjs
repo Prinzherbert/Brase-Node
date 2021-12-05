@@ -1,6 +1,20 @@
 import {WebSocketServer} from 'ws';
-const server = new WebSocketServer({port: (process.env.PORT || '8080')});
-var firstStart = true;
+import http from 'http';
+const porta = process.env.PORT || '8080';
+
+var htserver = http.createServer(function(request, response) {
+
+    response.writeHead(404);
+    response.end();
+});
+htserver.listen(porta, function() {
+});
+var server = new WebSocketServer({
+    server: htserver,
+    autoAcceptConnections: true
+});
+
+
 var postItArray;
 
 server.on('connection', socket => {
