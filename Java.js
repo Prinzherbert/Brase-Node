@@ -252,7 +252,7 @@ function textEdit() {
     }
     if (breakCount >= maxLineLength) {
       // Depois de certo número de caracteres, quebra independente da separação de palavras
-      tempText = tempText.slice(0, i) + breakChar + tempText.slice(i);
+      tempText = tempText.slice(0, i) + "-" + breakChar + tempText.slice(i);
       breakIncoming = false;
       breakCount = 0;
     }
