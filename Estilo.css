@@ -1,0 +1,117 @@
+body {
+  background-color: white;
+  cursor: pointer;
+  overflow: hidden;
+}
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.button {
+  position: absolute;
+  background-color: transparent;
+  z-index: 10;
+  width: 10vh;
+  height: 10vh;
+  outline: none;
+  border: none;
+  background-size: 100%;
+}
+.button:hover {
+  cursor: pointer;
+}
+.pan {
+  font: arial 12px;
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  width: 10vh;
+  border-radius: 3px;
+}
+.lightPan {
+  background-color: #ececec;
+  color: black;
+  border: 1px solid black;
+}
+.darkPan {
+  background-color: #181818;
+  color: white;
+  border: 1px solid #282828;
+}
+#x {
+  top: 5px;
+  left: 10px;
+}
+#y {
+  top: 5px;
+  left: calc(20px + 10vh);
+}
+#create {
+  left: 10px;
+  bottom: 10px;
+  background-image: url(Assets/Novo\ Post-it.png);
+  filter: hue-rotate(40deg);
+}
+#delete {
+  left: calc(20px + 10vh);
+  bottom: 10px;
+  background-image: url(Assets/Excluir\ Post-it.png);
+  filter: hue-rotate(290deg);
+}
+#theme {
+  right: 10px;
+  bottom: 10px;
+  background-image: url(Assets/Dark\ Post-it.png);
+  filter: hue-rotate(240deg) brightness(0.8);
+}
+
+#create:hover {
+  filter: hue-rotate(40deg) brightness(1.7);
+}
+
+#delete:hover {
+  filter: hue-rotate(290deg) brightness(1.1);
+}
+
+#theme:hover {
+  filter: hue-rotate(240deg) brightness(0.9);
+}
+
+#create:active {
+  filter: hue-rotate(40deg) brightness(0.6);
+}
+
+#delete:active {
+  filter: hue-rotate(290deg) brightness(0.6);
+}
+
+#theme:active {
+  filter: hue-rotate(240deg) brightness(0.6);
+}
+
+#editable {
+  z-index: 1;
+  position: absolute;
+  resize: none;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  background-image: url(Assets/Post-it.png);
+  background-size: 100%;
+  padding: 1em;
+  text-align: center;
+}
+#logo {
+  z-index: 10;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 10vh;
+  height: 8vh;
+  background-image: url(Assets/Logo\ Brase.png);
+  background-size: 100%;
+}

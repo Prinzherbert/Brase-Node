@@ -15,7 +15,7 @@ const breakChar = "¢"; // Caractere usado na quebra
 const highlightScaling = 2; // Aumento do tamanho do post-it ao selecionar
 const gridLimit = 64; // Parâmetros da grade de fundo
 const gridSize = 256;
-const socket = new WebSocket('ws://localhost:8080'); // WebSocket para conexão com o servidor
+const socket = new WebSocket('ws://brase-node.herokuapp.com'); // WebSocket para conexão com o servidor
 
 // Variáveis
 var imageWidth = window.innerWidth; //Tamanho do canvas

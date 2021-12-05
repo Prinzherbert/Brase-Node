@@ -16,7 +16,7 @@ wss.on('connection', (ws) => {
   console.log('Client connected');
   ws.on('close', () => console.log('Client disconnected'));
   socket.on('message', message => {
-    /* let mensagem = JSON.parse(message);
+    let mensagem = JSON.parse(message);
     if(mensagem[0] == "array"){
         postItArray = mensagem[1];
         server.broadcast(JSON.stringify(["array", postItArray]), server);
@@ -24,8 +24,7 @@ wss.on('connection', (ws) => {
         server.broadcast(JSON.stringify(["array", postItArray]), server);
     } else {
         server.broadcast(JSON.stringify(mensagem), server);
-    } */
-    server.broadcast("a");
+    }
   });
 });
 
