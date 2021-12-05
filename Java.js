@@ -64,7 +64,7 @@ socket.onmessage = ({data}) => { // Quando receber uma mensagem do servidor
     postItArray[info[1]].text = info[2];
     break;
   case "move":
-    if (selectedPostIt == null){
+    if (selectedPostIt.isSelected == false){
       postItArray[info[1]].x = info[2];
       postItArray[info[1]].y = info[3];
     }
@@ -211,8 +211,8 @@ window.onmouseup = function (e) {
   // Executado ao soltar o mouse
   mouseHeld = false;
   if (selectedPostIt) {
-    selectedPostIt.isSelected = false; // Remove a seleção da post-it caso se aplique
-    setTimeout(function(){selectedPostIt = null;},200);
+    setTimeout(function(){selectedPostIt.isSelected = false;},100); // Remove a seleção da post-it caso se aplique
+    selectedPostIt = null;
     postItIndex = null;
     socket.send(JSON.stringify(["array", postItArray]));
     requestAnimationFrame(draw);
