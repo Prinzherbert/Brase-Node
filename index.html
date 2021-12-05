@@ -1,17 +1,20 @@
-<html>
-  <head>
-    <script>
-      let HOST = location.origin.replace(/^http/, 'ws')
-      let ws = new WebSocket(HOST);
-      let el;
-
-      ws.onmessage = (event) => {
-        el = document.getElementById('server-time');
-        el.innerHTML = 'Server time: ' + event.data;
-      };
-    </script>
-  </head>
-  <body>
-    <p id="server-time"></p>
-  </body>
-</html>
+<HTML>
+<head>
+    <title>Protótipo TCC 2</title>
+    <meta charset="UTF-8"> <!-- Pra acentuação funcionar direito -->
+    <link rel="stylesheet" href="Estilo.css"> <!-- Link pro CSS -->
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <button id="create" class="button" onclick="CreatePostItMode();"></button>
+    <button id="delete" class="button" onclick="DeletePostItMode();"></button>
+    <button id="theme" class="button" onclick="ChangeTheme()"></button>
+    <div id="logo"></div>
+    <p id="x" class="pan lightPan">0</p>
+    <p id="y" class="pan lightPan">0</p>
+    <div style="visibility:hidden">
+        <image id="postit" src="Assets/Post-it.png"></image>
+    </div>
+</body>
+<script type="application/javascript" src="Java.js"></script> <!-- Link pro script -->
+</HTML>
