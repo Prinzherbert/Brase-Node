@@ -3,7 +3,9 @@ import http from 'http';
 const porta = process.env.PORT || '8080';
 
 var htserver = http.createServer(function(request, response) {
-    
+    response.writeHead(200);
+    response.write('Hello World!');
+    response.end();
 });
 htserver.listen(porta, function() {
 });
