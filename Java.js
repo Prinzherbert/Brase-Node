@@ -196,9 +196,9 @@ window.onmousemove = function (e) {
         // Só executar caso o modo de edição não esteja ativo
         selectedPostIt.x = mouseX - selectedPostIt.size * 0.5 + panX; // Movendo o elemento quando o mouse está colidindo com ele
         selectedPostIt.y = mouseY - selectedPostIt.size * 0.5 + panY;
-        setTimeout(function(){
+
           socket.send(JSON.stringify(["move", postItIndex, selectedPostIt.x, selectedPostIt.y]));
-        }, 100);
+
       }
     }
   }
