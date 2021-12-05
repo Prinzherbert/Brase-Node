@@ -7,7 +7,6 @@ var htserver = http.createServer(function(request, response) {
     response.writeHead(200);
     response.write('Hello World!');
     response.end();
-    console.log("http");
 });
 htserver.listen(porta, function() {
 });
