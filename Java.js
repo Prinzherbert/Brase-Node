@@ -212,7 +212,7 @@ window.onmouseup = function (e) {
   mouseHeld = false;
   if (selectedPostIt) {
     selectedPostIt.isSelected = false; // Remove a seleção da post-it caso se aplique
-    selectedPostIt = null;
+    setTimeout(function(){selectedPostIt = null;},200);
     postItIndex = null;
     socket.send(JSON.stringify(["array", postItArray]));
     requestAnimationFrame(draw);
