@@ -3,7 +3,6 @@ import http from 'http';
 const porta = process.env.PORT || '8080';
 
 var htserver = http.createServer(function(request, response) {
-    console.info("Rodando");
     response.writeHead(404);
     response.end();
 });
@@ -13,7 +12,6 @@ var server = new WebSocketServer({
     server: htserver,
     autoAcceptConnections: true
 });
-
 
 var postItArray;
 
