@@ -1,21 +1,135 @@
 <!DOCTYPE html>
-<HTML>
+<html lang="pt-br">
+
 <head>
-    <title>Protótipo TCC 2</title>
-    <meta charset="UTF-8"> <!-- Pra acentuação funcionar direito -->
-    <link rel="stylesheet" href="Estilo.css"> <!-- Link pro CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brase: Post-it and Brainstorming </title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <canvas id="canvas"></canvas>
-    <button id="create" class="button" onclick="CreatePostItMode();"></button>
-    <button id="delete" class="button" onclick="DeletePostItMode();"></button>
-    <button id="theme" class="button" onclick="ChangeTheme()"></button>
-    <div id="logo"></div>
-    <p id="x" class="pan lightPan">0</p>
-    <p id="y" class="pan lightPan">0</p>
-    <div style="visibility:hidden">
-        <image id="postit" src="Assets/Post-it.png"></image>
-    </div>
+  <div class="menu">
+    <ul>
+      <li><a id="aHome" class="pageNav">Home</a></li>
+      <li><a id="aProject" class="pageNav">Project</a></li>
+      <li><a id="aAbout" class="pageNav">About</a></li>
+      <li><a id="aSupport" class="pageNav">Support</a></li>
+    </ul>
+    <div class="logo"></div>
+  </div>
+  
+  <div id="divHome" class="site">
+    <br><br><br><br><br><br><br>
+    <h1>Bem-Vindo<br>ao<br>Brase!</h1><br>
+    <br><br><br><br><br><br>
+    <p align="center"> O Brase é um site com intuito de facilitar o desenvolvimento e a organização de suas<br> 
+    ideias e projetos, por meio da metodologia ágil Design Thinking, com o uso de post-its.</p>
+    <br>
+    <p align="center">Caso tenha alguma dúvida entre na aba <font color="blue"><u>Support</u></font>, nesta aba você pode encontrar tuto-<br>riais de como criar/entrar em um projeto, criar/editar algum post-it, também você pode<br> consultar o nosso chatbot, que está localizado no canto inferior direito da página.</p>
+    <br>
+    <p align="center"> Se tiver interesse em saber mais sobre a metodologia ágil Design Thinking, que é utili-<br>zada neste site, e também sobre o site como: Qual é o seu objetivo? , Quem são os<br> criadores? e outras informações. Entre na aba <font color="blue"><u>About!</u></font></p>
+  </div>
+  
+  <div id="chatbot">
+    <script>
+      window.watsonAssistantChatOptions = {
+      integrationID: "615ecbb4-2c81-42db-886e-5f980bb38a3f", // The ID of this integration.
+      region: "us-south", // The region your integration is hosted in.
+      serviceInstanceID: "b05b9e99-2f06-412d-9958-6057bd05de58", // The ID of your service instance.
+      onLoad: function(instance) { 
+        instance.updateLocale('pt-br');
+        instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js"
+    document.head.appendChild(t);
+  });
+</script>
+  </div>
+    
+
+  <div id="divProject" class="site">
+    <img align="center" src="Assets/Logo Brase1.png" width="310" height="290">
+    <br>
+    <input type="text" class="defaultTextBox advancedSearchTextBox" />
+    <br>
+    <br>
+    <a href="index.html" class="button">Entrar</a>
+    <a href="#" class="button">Criar</a>
+  </div>
+
+  <div id="divAbout" class="site">
+    <h2> Brase:</h2>
+    <img width="210" height="210" src="Assets/Logo Brase1.png" />
+    <p>Em fevereiro de 2021,foi tida aideia de montar um site que envolveria Java Script<br>e  a  metodologia ágil DesignThinking,  em  que  as  pessoas  poderiam  organizar<br>  os seus  trabalhos  e  estudos  de  uma  forma  mais  fácil e  organizada,<br>  no  meio online.</p>
+    <br>    
+    <p>Os <b>objetivos gerais</b> deste projeto é usar a linguagem de programação <br>javascript para desenvolver um website dotado de interação site a usuário,<br> ajudar as pessoas a desenvolverem seus projetos, por meio de interação<br> digital, utilizando o método Design Thinking. E utilizar a programação orien-<br>tada a objeto para ter organização, produtividade e desempenho para<br> o programador.</p>
+    <br>
+    <h2>Metodologia Ágeis:</h2>
+    <br>
+    <h4>O que são?</h4>
+    <br>
+    <p>São metodologias que surgiram para resolver problemas na parte de projetos,<br> de uma mais fácil e efetiva, de modo que os ciclos de desenvolvimento são curtos,<br> com entregas bem definidas e foco na melhoria contínua dos processos e alinha-<br>mento da equipe. E através das metodologias ágeis conseguimos indentificar<br> erros e falhas durante o desenvolvimento do projeto mais facilmente.<br><b> Exemplos:</b> Scrum, Kanban, Design Thinking e outros.</p> 
+    <br>
+    <h2> Design Thinking: </h2>
+    <br>
+    <h4> O que é?</h4>
+    <br>
+    <p> É uma abordagem, um conjunto de processos que visam solucionar um problema.<br> Seu grande diferencial é justamente sua praticidade e perspectiva diferenciada <br>dos problemas apresentados.</p>
+    <br>
+    <p><b> Etapas:</b><br> <b>1) Imersão:</b> é a fase de conhecimento, onde você determina os limites e <br>define o projeto de pesquisa.<br> <b>2) Análise:</b>é a fase em que você deve organizar as informações coleta-<br>das anteriormente.<br><b>3) Ideação:</b>é a fase em que as soluções para o problema serão propos-<br>tas, levando em consideração o público-alvo.<br><b>4) Prototipagem:</b>é a fase em que você e sua equipe construirão o es-<br>boço da solução, tornando possível a visualização da ideia na prática.<br><b>5) Testagem:</b>é a fase que corresponde ao teste dos diferentes méto-<br>dos de solução do nosso quebra-cabeça hipotético.</p>
+    <br>
+    <br>
+    <p><b> Criadores do Projeto: </b><br>-David Alves Tresano<br>-João Pedro Moura Elias<br>-Vinícius Catenaccio Fabricio</p>
+  </div>
+
+  <div id="divSupport" class="site">
+    <h2> • Criando post-it – passo a passo:</h2>
+    <img align="center" src="Assets/Tutorial de uso (criação).png" height="250" />
+    <br>
+    <br>
+
+    <h2> • Editando post-it – passo a passo:</h2>
+    <img align="center" src="Assets/Tutorial de uso (edição).png" height="250" />
+    <br>
+    <br>
+
+    <h2> • Excluindo post-it – passo a passo:</h2>
+    <img align="center" src="Assets/Tutorial de uso (exclusão).png" height="250" />
+    <br>
+    <br>
+
+    <h2> • Movendo post-it – passo a passo:</h2>
+    <img align="center" src="Assets/Tutorial de uso (movimento de post-it).png" height="250" />
+    <br>
+    <br>
+
+    <h2> • Movendo a tela – passo a passo:</h2>
+    <img align="center" src="Assets/Tutorial de uso (movimento de tela).png" height="250" />
+    <br>
+    <br>
+
+    <h2> • Colocando tema escuro – passo a passo:</h2>
+    <img align="center" src="Assets/Tutorial de uso (tema escuro).png" height="250" />
+    <br>
+    <br>
+
+    <h2> • Criando um projeto – passo a passo:</h2>
+    <img align="center" src="Assets/Tutorial de uso (criando projeto).png" height="250" />
+    <br>
+    <br>
+
+    <h2> • Entrando em um projeto já existente –<br> passo a passo:</h2>
+    <img align="center" src="Assets/Tutorial de uso (entrando projeto).png" height="250" />
+    <br>
+    <br>
+
+    <h2> • Salvando o projeto – passo a passo:</h2>
+    <img align="center" src="Assets/Tutorial de uso (salvando projeto).png" height="250" />
+  </div>
+
+  <script src="Home.js"></script>
 </body>
-<script src="Java.js" type="application/javascript"></script> <!-- Link pro script -->
-</HTML>
+</html>
