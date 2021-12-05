@@ -64,13 +64,10 @@ socket.onmessage = ({data}) => { // Quando receber uma mensagem do servidor
     postItArray[info[1]].text = info[2];
     break;
   case "move":
-    setTimeout(function(){
-      if (selectedPostIt = null){
-        postItArray[info[1]].x = info[2];
-        postItArray[info[1]].y = info[3];
-        console.log("teste");
-      }
-    }, 100);
+    if (selectedPostIt = null){
+      postItArray[info[1]].x = info[2];
+      postItArray[info[1]].y = info[3];
+    }
     break;
   case "array":
     postItArray = [];
@@ -199,7 +196,9 @@ window.onmousemove = function (e) {
         // Só executar caso o modo de edição não esteja ativo
         selectedPostIt.x = mouseX - selectedPostIt.size * 0.5 + panX; // Movendo o elemento quando o mouse está colidindo com ele
         selectedPostIt.y = mouseY - selectedPostIt.size * 0.5 + panY;
-        socket.send(JSON.stringify(["move", postItIndex, selectedPostIt.x, selectedPostIt.y]));
+        setTimeout(function(){
+          socket.send(JSON.stringify(["move", postItIndex, selectedPostIt.x, selectedPostIt.y]));
+        }, 100);
       }
     }
   }
