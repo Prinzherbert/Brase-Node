@@ -68,6 +68,7 @@ socket.onmessage = ({data}) => { // Quando receber uma mensagem do servidor
       if (selectedPostIt = null){
         postItArray[info[1]].x = info[2];
         postItArray[info[1]].y = info[3];
+        console.log("teste");
       }
     }, 100);
     break;
