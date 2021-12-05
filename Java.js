@@ -43,6 +43,7 @@ var breakCount = 0; // Contagem de caracteres para quebrar
 var tempText; // Texto antes de ser quebrado
 var isDarkTheme = false;
 var isThemeSwitchPossible = true;
+var syncDelay = 0;
 
 // Paleta de cores
 var textColor = "#000000";
@@ -64,10 +65,15 @@ socket.onmessage = ({data}) => { // Quando receber uma mensagem do servidor
     postItArray[info[1]].text = info[2];
     break;
   case "move":
+    setTimeout(function(){
     if (selectedPostIt == null){
       postItArray[info[1]].x = info[2];
       postItArray[info[1]].y = info[3];
+      syncDelay = 0;
+    } else {
+      syncDelay = 100;
     }
+    }, syncDelay);
     break;
   case "array":
     postItArray = [];
