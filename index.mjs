@@ -1,5 +1,6 @@
 import {WebSocketServer} from 'ws';
 import http from 'http';
+import { response } from 'express';
 const porta = process.env.PORT || '8080';
 
 var htserver = http.createServer(function(request, response) {
@@ -28,6 +29,7 @@ server.on('connection', socket => {
             server.broadcast(JSON.stringify(mensagem), server);
         }
     });
+    console.log("A");
 });
 
 server.broadcast = function(data, sender){
