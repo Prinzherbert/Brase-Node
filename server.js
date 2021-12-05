@@ -19,11 +19,11 @@ wss.on('connection', (ws) => {
     let mensagem = JSON.parse(message);
     if(mensagem[0] == "array"){
         postItArray = mensagem[1];
-        server.broadcast(JSON.stringify(["array", postItArray]), server);
+        wss.broadcast(JSON.stringify(["array", postItArray]), server);
     } else if(mensagem[0] == "connect"){
-        server.broadcast(JSON.stringify(["array", postItArray]), server);
+        wss.broadcast(JSON.stringify(["array", postItArray]), server);
     } else {
-        server.broadcast(JSON.stringify(mensagem), server);
+        wss.broadcast(JSON.stringify(mensagem), server);
     }
   });
 });
