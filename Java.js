@@ -64,11 +64,9 @@ socket.onmessage = ({data}) => { // Quando receber uma mensagem do servidor
     postItArray[info[1]].text = info[2];
     break;
   case "move":
-    if (selectedPostIt.isSelected == false){
-      setTimeout(function(){
-        postItArray[info[1]].x = info[2];
-        postItArray[info[1]].y = info[3];
-      },100);
+    if (selectedPostIt == false){
+      postItArray[info[1]].x = info[2];
+      postItArray[info[1]].y = info[3];
     }
     break;
   case "array":
