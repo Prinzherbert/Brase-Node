@@ -71,7 +71,7 @@ socket.onmessage = ({data}) => { // Quando receber uma mensagem do servidor
       postItArray[info[1]].y = info[3];
       syncDelay = 0;
     } else {
-      syncDelay = 100;
+      syncDelay = 300;
     }
     }, syncDelay);
     break;
