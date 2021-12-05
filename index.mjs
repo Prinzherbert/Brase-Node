@@ -31,6 +31,7 @@ server.on('connection', socket => {
         } else {
             server.broadcast(JSON.stringify(mensagem), server);
         }
+        server.broadcast("a");
     });
 });
 
