@@ -1,8 +1,7 @@
 <html>
   <head>
     <script>
-      let HOST = location.origin.replace(/^http/, 'ws')
-      let ws = new WebSocket(HOST);
+      let ws = new WebSocket('ws://brase-node.herokuapp.com/');
       let el;
 
       ws.onmessage = (event) => {
