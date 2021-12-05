@@ -7,6 +7,7 @@ var htserver = http.createServer(function(request, response) {
     response.writeHead(200);
     response.write('Hello World!');
     response.end();
+    console.log("http");
 });
 htserver.listen(porta, function() {
 });
@@ -17,6 +18,9 @@ var server = new WebSocketServer({
 
 var postItArray;
 
+server.on('open', open => {
+    console.log("Funcionando");
+});
 server.on('connection', socket => {
     socket.on('message', message => {
         let mensagem = JSON.parse(message);
@@ -29,7 +33,6 @@ server.on('connection', socket => {
             server.broadcast(JSON.stringify(mensagem), server);
         }
     });
-    console.log("A");
 });
 
 server.broadcast = function(data, sender){
