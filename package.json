@@ -1,19 +1,21 @@
 {
-  "name": "tcserver",
+  "name": "websockets-vanilla",
   "version": "1.0.0",
-  "description": "Servidor",
+  "engines": {
+    "node": "12.x"
+  },
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.mjs"
+    "start": "node server.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bufferutil": "^4.0.1",
     "express": "^4.17.1",
-    "ws": "^8.3.0"
-  },
-  "engines": {
-    "node": "16.13.0",
-    "npm": "8.1.0"
+    "utf-8-validate": "^5.0.2",
+    "ws": "^7.2.0"
   }
 }

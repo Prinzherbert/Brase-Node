@@ -1,11 +1,13 @@
 <html>
   <head>
     <script>
-      let ws = new WebSocket('ws://brase-node.herokuapp.com/');
+      let HOST = location.origin.replace(/^http/, 'ws')
+      let ws = new WebSocket(HOST);
       let el;
 
       ws.onmessage = (event) => {
-        console.log("a");
+        el = document.getElementById('server-time');
+        el.innerHTML = 'Server time: ' + event.data;
       };
     </script>
   </head>
