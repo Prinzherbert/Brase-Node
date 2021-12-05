@@ -68,7 +68,7 @@ socket.onmessage = ({data}) => { // Quando receber uma mensagem do servidor
       postItArray[info[1]].x = info[2];
       postItArray[info[1]].y = info[3];
     }
-    console.log("Move");
+    console.log(info);
     break;
   case "array":
     postItArray = [];
