@@ -54,6 +54,7 @@ function isServerReady(){setTimeout(function(){ // Esperar pela conexão com o s
     socket.send(JSON.stringify(["connect"]));
   } else {
     isServerReady();
+    console.log("Connecting...");
   }}, 200);
 }
 
