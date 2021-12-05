@@ -50,6 +50,7 @@ var gridColor = "#ececec";
 var backgroundColor = "#f2f2f2";
 
 function isServerReady(){setTimeout(function(){ // Esperar pela conexão com o servidor
+  console.log("a");
   if (socket.readyState == 1){
     socket.send(JSON.stringify(["connect"]));
   } else {
